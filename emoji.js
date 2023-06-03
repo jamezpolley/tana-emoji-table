@@ -3341,41 +3341,40 @@ const qhn = "☔"
         secret: z4n
     };
 
-function onLoad() {
-    const table = document.createElement('table');
 
-    for (const key in W4n) {
-        const value = W4n[key];
+console.log("ONE");
+const table = document.createElement('table');
 
-        if (typeof value === 'string' || typeof value === 'number') {
-            const row = document.createElement('tr');
-            const cell1 = document.createElement('td');
-            const cell2 = document.createElement('td');
+for (const key in W4n) {
+    const value = W4n[key];
 
-            cell1.textContent = key;
-            cell2.textContent = value;
+    if (typeof value === 'string' || typeof value === 'number') {
+        const row = document.createElement('tr');
+        const cell1 = document.createElement('td');
+        const cell2 = document.createElement('td');
 
-            row.appendChild(cell1);
-            row.appendChild(cell2);
+        cell1.textContent = key;
+        cell2.textContent = value;
 
-            table.appendChild(row);
-        } else {
-            const row = document.createElement('tr');
-            const cell1 = document.createElement('td');
-            const cell2 = document.createElement('td');
+        row.appendChild(cell1);
+        row.appendChild(cell2);
 
-            cell1.textContent = key;
-            cell2.textContent = value.valueOf();
+        table.appendChild(row);
+    } else {
+        const row = document.createElement('tr');
+        const cell1 = document.createElement('td');
+        const cell2 = document.createElement('td');
 
-            row.appendChild(cell1);
-            row.appendChild(cell2);
+        cell1.textContent = key;
+        cell2.textContent = value.valueOf();
 
-            table.appendChild(row);
-        }
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+
+        table.appendChild(row);
     }
-
-    document.body.appendChild(table);
-
 }
 
-window.addEventListener('load', onLoad);
+document.body.appendChild(table);
+
+}
