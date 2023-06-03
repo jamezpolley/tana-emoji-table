@@ -8,7 +8,29 @@
 
 <body>
   <h1>Tana Emoji Table</h1>
+  <input type="text" id="search" />
   <script src="emoji.js"></script>
+  <script>
+      var table = document.getElementById("table");
+      var searchInput = document.getElementById("search");
+
+      searchInput.addEventListener("input", function () {
+        var searchText = this.value;
+        var rows = table.querySelectorAll("tr");
+
+        for (var i = 0; i < rows.length; i++) {
+          var row = rows[i];
+          var emoji = row.querySelector("td:first-child").textContent;
+
+          if (emoji.toLowerCase().indexOf(searchText.toLowerCase()) >= 0) {
+            row.style.display = "table-row";
+          } else {
+            row.style.display = "none";
+          }
+        }
+      });
+
+  </script>
 </body>
 
 </html>

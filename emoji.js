@@ -3376,5 +3376,3 @@ for (const key in W4n) {
 }
 
 document.body.appendChild(table);
-
-}
